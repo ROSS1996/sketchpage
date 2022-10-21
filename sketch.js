@@ -1,9 +1,19 @@
-const pixels = 32;
+const totalPixels = 32;
 
 const container = document.getElementById("drawing");
+const draw = document.getElementById("draw");
+const erase = document.getElementById("erase");
+const clear = document.getElementById("clear");
+
+let control = 'draw';
+
+draw.addEventListener("click", function () { control = 'draw';})
+erase.addEventListener("click", function() { control = 'erase';})
+clear.addEventListener("click", function() { clearFrame(); })
+
 
 /* Mouse States */
-var mousePressed = false;
+let mousePressed = false;
 // When mouse button is pressed
 container.addEventListener('mouseup', function () {
     mousePressed = false;
@@ -13,7 +23,7 @@ container.addEventListener('mousedown', function () {
     mousePressed = true;
 })
 
-for (i = 0; i < pixels; i++) {
+for (i = 0; i < totalPixels; i++) {
     const pixel = document.createElement("div")
     pixel.classList.add("defPixel")
     pixel.id = `pixel${i}`;
@@ -23,7 +33,6 @@ for (i = 0; i < pixels; i++) {
         changeColor(this.id)
     })
     pixel.addEventListener('mouseenter', function () {
-        console.log('Mouse enter')
         pixel.classList.toggle('pixelHover');
         if (mousePressed == true) {
             changeColor(this.id);
@@ -41,11 +50,17 @@ function changeColor(element) {
     // External CSS
     const style = window.getComputedStyle(pixel)
     const cssColor = style.getPropertyValue('background-color');
-
-    if (cssColor == 'rgb(255, 255, 255)' || inlineColor == 'white' || inlineColor == '') {
+    if (control == 'draw') {
         document.getElementById(element).style.backgroundColor = 'black'
     }
-    else if (cssColor == 'rgb(255, 255, 255)' || inlineColor == 'black') {
+    else if (control == 'erase') {
         document.getElementById(element).style.backgroundColor = 'white'
+    }
+}
+
+function clearFrame() {
+    let pixels = document.getElementsByClassName('defPixel');
+    for (i = 0; i < totalPixels; i++) {
+        pixels[i].style.backgroundColor = 'white';
     }
 }
