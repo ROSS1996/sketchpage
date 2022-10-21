@@ -27,6 +27,7 @@ main {
     justify-content: center;
     align-items: center;
     gap: 60px;
+    background-color: lightgray;
 }
 
 footer {
@@ -45,6 +46,7 @@ footer a {
 
 .drawingPad {
     border: 2px dotted black;
+    background-color: white;
     width: 450px;
     height: 600px;
     display: flex;
