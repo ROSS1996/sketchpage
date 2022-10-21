@@ -1,17 +1,15 @@
-
 const pixels = 32;
 
 const container = document.getElementById("drawing");
 
+/* Mouse States */
 var mousePressed = false;
-
+// When mouse button is pressed
 container.addEventListener('mouseup', function () {
-    console.log('Mouse unpressed')
     mousePressed = false;
 })
-
+// When mouse button is released
 container.addEventListener('mousedown', function () {
-    console.log('Mouse pressed')
     mousePressed = true;
 })
 
@@ -25,27 +23,29 @@ for (i = 0; i < pixels; i++) {
         changeColor(this.id)
     })
     pixel.addEventListener('mouseenter', function () {
+        console.log('Mouse enter')
+        pixel.classList.toggle('pixelHover');
         if (mousePressed == true) {
-            changeColor(this.id)
+            changeColor(this.id);
         }
+    })
+    pixel.addEventListener('mouseleave', function () {
+        pixel.classList.toggle('pixelHover');
     })
 }
 
-
-
 function changeColor(element) {
-
+    // Inline CSS
     const pixel = document.getElementById(element);
+    const inlineColor = pixel.style.backgroundColor
+    // External CSS
     const style = window.getComputedStyle(pixel)
     const cssColor = style.getPropertyValue('background-color');
-    const inlineColor = pixel.style.backgroundColor
-    //console.log(`BG Color: ${bgColor}`)
+
     if (cssColor == 'rgb(255, 255, 255)' || inlineColor == 'white' || inlineColor == '') {
-        console.log('BG Color white')
         document.getElementById(element).style.backgroundColor = 'black'
     }
     else if (cssColor == 'rgb(255, 255, 255)' || inlineColor == 'black') {
-        console.log('BG Color Black')
         document.getElementById(element).style.backgroundColor = 'white'
     }
 }
