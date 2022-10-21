@@ -1,6 +1,7 @@
-const totalPixels = 32;
+const totalPixels = 1850;
 
 const container = document.getElementById("drawing");
+
 const draw = document.getElementById("draw");
 const erase = document.getElementById("erase");
 const clear = document.getElementById("clear");
@@ -54,13 +55,13 @@ function changeColor(element) {
         document.getElementById(element).style.backgroundColor = 'black'
     }
     else if (control == 'erase') {
-        document.getElementById(element).style.backgroundColor = 'white'
+        document.getElementById(element).style.backgroundColor = ''
     }
 }
 
 function clearFrame() {
     let pixels = document.getElementsByClassName('defPixel');
     for (i = 0; i < totalPixels; i++) {
-        pixels[i].style.backgroundColor = 'white';
+        pixels[i].style.backgroundColor = '';
     }
 }

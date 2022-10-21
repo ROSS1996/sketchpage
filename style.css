@@ -26,7 +26,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 60px
+    gap: 60px;
 }
 
 footer {
@@ -46,11 +46,13 @@ footer a {
 .drawingPad {
     border: 2px dotted black;
     width: 450px;
-    height: fit-content;
+    height: 600px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-}
+    align-items: center;
+    justify-content: center;
+    }
 
 .defPixel {
     user-select: none;
@@ -59,9 +61,8 @@ footer a {
     -webkit-user-select: none;
     -ms-user-select: none;
     background-color: white;
-    width: 50px;
-    height: 50px;
-    flex: 1 1 auto;
+    width: 10px;
+    height: 10px;
 }
 
 .pixelHover {
