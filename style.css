@@ -36,6 +36,24 @@ footer a {
 
 .drawingPad {
     border: 2px dotted black;
-    width: 600px;
-    height: 600px;
+    width: 450px;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.defPixel {
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    flex: 1 1 auto;
+}
+
+.defPixel:hover {
+    opacity: 0.5!important;
+    transition: 0.01s;
+    background-color: grey;
+    transition: 0.3s;
+
 }
