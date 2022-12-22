@@ -10,7 +10,6 @@ Drawing Etch-a-sketch project built with Javascript.
 - Live Site URL: [https://ross1996.github.io/sketchpage/](<https://ross1996.github.io/sketchpage/>)
 ## Built with
 
-- Semantic HTML5 markup
-- CSS custom properties
-- CSS Flexbox
+- HTML5
+- CSS
 - Javascript
