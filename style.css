@@ -45,15 +45,15 @@ footer a {
 }
 
 .drawingPad {
+    box-sizing: border-box;
     border: 2px dotted black;
     background-color: white;
     width: 450px;
-    height: 600px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    height: 500px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10px, 10px));
+    background-color: transparent !important;
+
     }
 
 .defPixel {
@@ -62,9 +62,10 @@ footer a {
     -webkit-user-drag: none;
     -webkit-user-select: none;
     -ms-user-select: none;
-    background-color: white;
+    background-color: transparent;
     width: 10px;
     height: 10px;
+    row-gap: -5px;
 }
 
 .pixelHover {

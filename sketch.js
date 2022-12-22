@@ -1,4 +1,4 @@
-const totalPixels = 1850;
+const totalPixels = 2200;
 
 const container = document.getElementById("drawing");
 
